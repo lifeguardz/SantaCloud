@@ -5,6 +5,7 @@ import ch.stnikolauswohlen.santacloud.v1.services.family.FamilyService;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Positive;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort.Direction;
 import org.springframework.http.ResponseEntity;
 import org.springframework.security.access.prepost.PreAuthorize;
@@ -19,6 +20,7 @@ public class FamilyController
 {
     private final FamilyService familyService;
 
+    @Autowired
     public FamilyController(final FamilyService familyService)
     {
         this.familyService = familyService;

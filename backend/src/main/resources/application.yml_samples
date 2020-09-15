@@ -1,0 +1,30 @@
+server:
+  port: 8080
+
+spring:
+  application:
+    name: SantaCloud
+  messages:
+    encoding: UTF-8
+  data:
+    rest:
+      basePath: /v1
+api:
+  database:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    hibernate-dialect: org.hibernate.dialect.MySQL5Dialect
+    hibernate-ddl-auto: validate
+    username: YOUR_CREDENTIALS_HERE
+    password: YOUR_CREDENTIALS_HERE
+    url: jdbc:mysql://YOUR_INFORMATIONS_HERE/santacloud?useLegacyDatetimeCode=false&serverTimezone=Europe/Zurich
+
+  project:
+    version: ^project.version^
+
+okta:
+  oauth2:
+    issuer: https://YOUR_CREDENTIALS_HERE/oauth2/default
+    client-id: YOUR_CREDENTIALS_HERE
+    client-secret: YOUR_CREDENTIALS_HERE
+    redirect-uri: /authorization-code/callback
+    groups-claim: groups

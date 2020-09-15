@@ -74,7 +74,7 @@ public class FamilyService extends AbstractService
         try {
             Optional<FamilyDAO> familyDAO = familyRepository.findById(familyId);
 
-            if (!familyDAO.isPresent()) {
+            if (familyDAO.isEmpty()) {
                 return ErrorResponseEntity.builder()
                     .status(HttpStatus.NOT_FOUND)
                     .build();
@@ -98,7 +98,7 @@ public class FamilyService extends AbstractService
         try {
             Optional<FamilyDAO> familyDAO = familyRepository.findById(familyId);
 
-            if (!familyDAO.isPresent()) {
+            if (familyDAO.isEmpty()) {
                 return ErrorResponseEntity.builder()
                     .status(HttpStatus.NOT_FOUND)
                     .build();

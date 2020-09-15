@@ -32,6 +32,7 @@
     <swagger.version>2.9.2</swagger.version>
     <okta-spring.version>1.4.0</okta-spring.version>
     <slf4j.version>1.7.30</slf4j.version>
+    <easy-random.version>4.2.0</easy-random.version>
   </properties>
 
   <parent>
@@ -117,6 +118,12 @@
     <dependency>
       <artifactId>spring-security-test</artifactId>
       <groupId>org.springframework.security</groupId>
+      <scope>test</scope>
+    </dependency>
+    <dependency>
+      <groupId>org.jeasy</groupId>
+      <artifactId>easy-random-core</artifactId>
+      <version>${easy-random.version}</version>
       <scope>test</scope>
     </dependency>
   </dependencies>

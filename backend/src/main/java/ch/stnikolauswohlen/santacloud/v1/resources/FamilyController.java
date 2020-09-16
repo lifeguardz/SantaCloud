@@ -1,7 +1,7 @@
 package ch.stnikolauswohlen.santacloud.v1.resources;
 
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
-import ch.stnikolauswohlen.santacloud.v1.services.family.FamilyService;
+import ch.stnikolauswohlen.santacloud.v1.services.FamilyService;
 import javax.validation.Valid;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Positive;

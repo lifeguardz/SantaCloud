@@ -5,7 +5,7 @@ import ch.stnikolauswohlen.santacloud.v1.entities.dao.helper.HelperDAO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.helper.HelperDTO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.helper.HelperListDTO;
 import ch.stnikolauswohlen.santacloud.v1.mappers.HelperMapper;
-import ch.stnikolauswohlen.santacloud.v1.repositories.helper.HelperRepository;
+import ch.stnikolauswohlen.santacloud.v1.repositories.HelperRepository;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;

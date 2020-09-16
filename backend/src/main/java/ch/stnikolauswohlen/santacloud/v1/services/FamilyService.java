@@ -1,12 +1,11 @@
-package ch.stnikolauswohlen.santacloud.v1.services.family;
+package ch.stnikolauswohlen.santacloud.v1.services;
 
 import ch.stnikolauswohlen.santacloud.errorhandling.ErrorResponseEntity;
 import ch.stnikolauswohlen.santacloud.v1.entities.dao.family.FamilyDAO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyListDTO;
 import ch.stnikolauswohlen.santacloud.v1.mappers.FamilyMapper;
-import ch.stnikolauswohlen.santacloud.v1.repositories.family.FamilyRepository;
-import ch.stnikolauswohlen.santacloud.v1.services.AbstractService;
+import ch.stnikolauswohlen.santacloud.v1.repositories.FamilyRepository;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;

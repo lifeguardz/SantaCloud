@@ -1,4 +1,4 @@
-package ch.stnikolauswohlen.santacloud.v1.repositories.family;
+package ch.stnikolauswohlen.santacloud.v1.repositories;
 
 import ch.stnikolauswohlen.santacloud.v1.entities.dao.family.FamilyDAO;
 import java.util.List;

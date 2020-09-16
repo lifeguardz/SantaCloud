@@ -20,7 +20,7 @@ import org.springframework.util.StringUtils;
 @ExtendWith(MockitoExtension.class)
 class FamilyMapperTest
 {
-    private EasyRandom generator = new EasyRandom();
+    private final EasyRandom generator = new EasyRandom();
 
     @InjectMocks
     private FamilyMapper familyMapper;

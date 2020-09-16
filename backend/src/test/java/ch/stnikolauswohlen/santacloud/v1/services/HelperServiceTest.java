@@ -30,7 +30,7 @@ import org.springframework.http.ResponseEntity;
 @ExtendWith(MockitoExtension.class)
 class HelperServiceTest
 {
-    private EasyRandom generator = new EasyRandom();
+    private final EasyRandom generator = new EasyRandom();
 
     @Mock
     private HelperRepository mockHelperRepository;

@@ -1,12 +1,11 @@
-package ch.stnikolauswohlen.santacloud.v1.services.family;
+package ch.stnikolauswohlen.santacloud.v1.services;
 
 import ch.stnikolauswohlen.santacloud.errorhandling.ErrorResponseEntity;
 import ch.stnikolauswohlen.santacloud.v1.entities.dao.family.FamilyDAO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyListDTO;
 import ch.stnikolauswohlen.santacloud.v1.mappers.FamilyMapper;
-import ch.stnikolauswohlen.santacloud.v1.repositories.family.FamilyRepository;
-import ch.stnikolauswohlen.santacloud.v1.services.AbstractService;
+import ch.stnikolauswohlen.santacloud.v1.repositories.FamilyRepository;
 import java.util.List;
 import java.util.Optional;
 import org.slf4j.Logger;
@@ -69,7 +68,7 @@ public class FamilyService extends AbstractService
         }
     }
 
-    public ResponseEntity<Object> getFamily(final Long familyId)
+    public ResponseEntity<Object> getFamily(final long familyId)
     {
         try {
             Optional<FamilyDAO> familyDAO = familyRepository.findById(familyId);
@@ -145,7 +144,7 @@ public class FamilyService extends AbstractService
             return ResponseEntity.status(HttpStatus.OK).build();
         }
         catch (Exception e) {
-            writeLog("Couldn't delete family with id id " + familyId + " from database!", e);
+            writeLog("Couldn't delete family with id " + familyId + " from database!", e);
 
             return ErrorResponseEntity.builder()
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)

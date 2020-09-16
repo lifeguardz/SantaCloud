@@ -25,5 +25,5 @@ public class FamilyDTO
     private String finalDay;
     private String descriptionoffice;
     private String descriptionteam;
-    private int teamid;
+    private int teamId;
 }

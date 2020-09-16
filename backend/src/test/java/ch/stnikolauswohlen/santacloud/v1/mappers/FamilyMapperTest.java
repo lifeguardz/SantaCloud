@@ -20,13 +20,13 @@ import org.springframework.util.StringUtils;
 @ExtendWith(MockitoExtension.class)
 class FamilyMapperTest
 {
-    private EasyRandom generator = new EasyRandom();
+    private final EasyRandom generator = new EasyRandom();
 
     @InjectMocks
     private FamilyMapper familyMapper;
 
     @Test
-    void testMapFamilyDAOToFamilyDTO()
+    void mapFamilyDAOToFamilyDTO()
     {
         FamilyDAO testFamilyDAO = generator.nextObject(FamilyDAO.class);
 
@@ -51,7 +51,7 @@ class FamilyMapperTest
     void mapFamiliesDataToFamilyListDTOS()
     {
         List<FamilyDAO> testFamilyDAOS = generator.objects(FamilyDAO.class, 10).collect(Collectors.toList());
-        PageImpl<FamilyDAO> familyDAOPage = new PageImpl<FamilyDAO>(testFamilyDAOS);
+        PageImpl<FamilyDAO> familyDAOPage = new PageImpl<>(testFamilyDAOS);
 
         List<FamilyListDTO> resultFamilyListDTOS = familyMapper.mapFamiliesDataToFamilyListDTOS(familyDAOPage);
         FamilyDAO resultFirstFamilyDAOInList = familyDAOPage.getContent().get(0);

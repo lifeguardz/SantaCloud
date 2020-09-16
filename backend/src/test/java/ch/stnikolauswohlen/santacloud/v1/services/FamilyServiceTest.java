@@ -1,4 +1,4 @@
-package ch.stnikolauswohlen.santacloud.v1.services.family;
+package ch.stnikolauswohlen.santacloud.v1.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -12,7 +12,7 @@ import ch.stnikolauswohlen.santacloud.v1.entities.dao.family.FamilyDAO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyListDTO;
 import ch.stnikolauswohlen.santacloud.v1.mappers.FamilyMapper;
-import ch.stnikolauswohlen.santacloud.v1.repositories.family.FamilyRepository;
+import ch.stnikolauswohlen.santacloud.v1.repositories.FamilyRepository;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jeasy.random.EasyRandom;
@@ -30,7 +30,7 @@ import org.springframework.http.ResponseEntity;
 @ExtendWith(MockitoExtension.class)
 class FamilyServiceTest
 {
-    private EasyRandom generator = new EasyRandom();
+    private final EasyRandom generator = new EasyRandom();
 
     @Mock
     private FamilyRepository mockFamilyRepository;

@@ -1,8 +1,7 @@
 package ch.stnikolauswohlen.santacloud.v1.resources;
 
-import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
-import ch.stnikolauswohlen.santacloud.v1.services.FamilyService;
-import javax.validation.Valid;
+import ch.stnikolauswohlen.santacloud.v1.entities.dtos.helper.HelperDTO;
+import ch.stnikolauswohlen.santacloud.v1.services.HelperService;
 import javax.validation.constraints.Min;
 import javax.validation.constraints.Positive;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,29 +11,29 @@ import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.validation.annotation.Validated;
 import org.springframework.web.bind.annotation.*;
 
-@RestController("8f145ee6-7ad1-4bc3-932c-1390ef27a79e")
+@RestController("2c7b04f3-7ea3-4f36-83a8-e94a1cb9f0d3")
 @RequestMapping(value = "/v1")
 @Validated
 @PreAuthorize("hasAnyAuthority('ADMIN', 'OFFICE')")
-public class FamilyController
+public class HelperController
 {
-    private final FamilyService familyService;
+    private final HelperService helperService;
 
     @Autowired
-    public FamilyController(final FamilyService familyService)
+    public HelperController(final HelperService helperService)
     {
-        this.familyService = familyService;
+        this.helperService = helperService;
     }
 
-    @GetMapping(value = "/families")
-    public ResponseEntity<Object> getFamilies(
+    @GetMapping(value = "/helpers")
+    public ResponseEntity<Object> getHelpers(
         @RequestParam(name = "_start", defaultValue = "0", required = false) @Min(0) int start,
         @RequestParam(name = "_end", defaultValue = "10", required = false) @Positive int end,
         @RequestParam(name = "_sort", defaultValue = "id", required = false) String sortProperty,
         @RequestParam(name = "_order", defaultValue = "ASC", required = false) Direction sortDirection
     )
     {
-        return familyService.getFamilies(
+        return helperService.getHelpers(
             start,
             end,
             sortProperty,
@@ -42,34 +41,34 @@ public class FamilyController
         );
     }
 
-    @GetMapping(value = "/families/{id}")
-    public ResponseEntity<Object> getFamily(@PathVariable("id") long id)
+    @GetMapping(value = "/helpers/{id}")
+    public ResponseEntity<Object> getHelper(@PathVariable("id") long id)
     {
-        return familyService.getFamily(id);
+        return helperService.getHelper(id);
     }
 
-    @PutMapping(value = "/families/{id}")
-    public ResponseEntity<Object> updateFamily(
+    @PutMapping(value = "/helpers/{id}")
+    public ResponseEntity<Object> updateHelper(
         @PathVariable("id") long id,
-        @RequestBody FamilyDTO familyDTO
+        @RequestBody HelperDTO helperDTO
     )
     {
-        return familyService.updateFamily(id, familyDTO);
+        return helperService.updateHelper(id, helperDTO);
     }
 
-    @PostMapping(value = "/families")
-    public ResponseEntity<Object> createFamily(
-        @RequestBody @Valid FamilyDTO familyDTO
+    @PostMapping(value = "/helpers")
+    public ResponseEntity<Object> creaateHelper(
+        @RequestBody HelperDTO helperDTO
     )
     {
-        return familyService.createFamily(familyDTO);
+        return helperService.createHelper(helperDTO);
     }
 
-    @DeleteMapping(value = "/families/{id}")
-    public ResponseEntity<Object> deleteFamily(
+    @DeleteMapping(value = "/helpers/{id}")
+    public ResponseEntity<Object> deleteHelper(
         @PathVariable("id") long id
     )
     {
-        return familyService.deleteFamily(id);
+        return helperService.deleteHelper(id);
     }
 }

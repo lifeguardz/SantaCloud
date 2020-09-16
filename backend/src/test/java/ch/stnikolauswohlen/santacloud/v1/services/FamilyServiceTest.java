@@ -1,4 +1,4 @@
-package ch.stnikolauswohlen.santacloud.v1.services.family;
+package ch.stnikolauswohlen.santacloud.v1.services;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
@@ -13,7 +13,6 @@ import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyDTO;
 import ch.stnikolauswohlen.santacloud.v1.entities.dtos.family.FamilyListDTO;
 import ch.stnikolauswohlen.santacloud.v1.mappers.FamilyMapper;
 import ch.stnikolauswohlen.santacloud.v1.repositories.FamilyRepository;
-import ch.stnikolauswohlen.santacloud.v1.services.FamilyService;
 import java.util.Optional;
 import java.util.stream.Collectors;
 import org.jeasy.random.EasyRandom;

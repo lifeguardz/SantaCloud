@@ -69,7 +69,7 @@ public class FamilyService extends AbstractService
         }
     }
 
-    public ResponseEntity<Object> getFamily(final Long familyId)
+    public ResponseEntity<Object> getFamily(final long familyId)
     {
         try {
             Optional<FamilyDAO> familyDAO = familyRepository.findById(familyId);
@@ -145,7 +145,7 @@ public class FamilyService extends AbstractService
             return ResponseEntity.status(HttpStatus.OK).build();
         }
         catch (Exception e) {
-            writeLog("Couldn't delete family with id id " + familyId + " from database!", e);
+            writeLog("Couldn't delete family with id " + familyId + " from database!", e);
 
             return ErrorResponseEntity.builder()
                 .status(HttpStatus.INTERNAL_SERVER_ERROR)

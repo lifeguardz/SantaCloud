@@ -1,0 +1,11 @@
+version: '3.8'
+services:
+  db:
+    image: mysql
+    environment:
+      - MYSQL_ROOT_PASSWORD=YOUR_INFORMATIONS_HERE
+      - MYSQL_USER=YOUR_INFORMATIONS_HERE
+      - MYSQL_PASSWORD=YOUR_INFORMATIONS_HERE
+      - MYSQL_DATABASE=santacloud
+    ports:
+      - '3306:3306'

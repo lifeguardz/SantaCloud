@@ -26,7 +26,7 @@ class FamilyMapperTest
     private FamilyMapper familyMapper;
 
     @Test
-    void testMapFamilyDAOToFamilyDTO()
+    void mapFamilyDAOToFamilyDTO()
     {
         FamilyDAO testFamilyDAO = generator.nextObject(FamilyDAO.class);
 
@@ -51,7 +51,7 @@ class FamilyMapperTest
     void mapFamiliesDataToFamilyListDTOS()
     {
         List<FamilyDAO> testFamilyDAOS = generator.objects(FamilyDAO.class, 10).collect(Collectors.toList());
-        PageImpl<FamilyDAO> familyDAOPage = new PageImpl<FamilyDAO>(testFamilyDAOS);
+        PageImpl<FamilyDAO> familyDAOPage = new PageImpl<>(testFamilyDAOS);
 
         List<FamilyListDTO> resultFamilyListDTOS = familyMapper.mapFamiliesDataToFamilyListDTOS(familyDAOPage);
         FamilyDAO resultFirstFamilyDAOInList = familyDAOPage.getContent().get(0);
